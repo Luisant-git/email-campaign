@@ -1,0 +1,101 @@
+
+@import "../../assets/scss/variables";
+
+
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .header-search {
+      width: 300px;
+      
+      .ant-input-group-addon {
+        background: transparent;
+        border: none;
+      }
+      
+      .ant-input {
+        border-radius: 4px;
+        background: #f5f7fa;
+        border: none;
+        
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .header-notification {
+      cursor: pointer;
+      
+      .notification-icon {
+        font-size: 18px;
+        color: #666;
+        transition: color 0.3s;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .header-profile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.025);
+      }
+
+      .profile-avatar {
+        background: $primary-color;
+      }
+
+      .profile-name {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .app-header {
+    .header-left {
+      .header-search {
+        width: 200px;
+      }
+    }
+    
+    .header-right {
+      .profile-name {
+        display: none;
+      }
+    }
+  }
+}
