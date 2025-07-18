@@ -1,41 +1,42 @@
-
-@import "../../assets/scss/variables";
-
-
-
+/* Main header container - NO CHANGES */
 .app-header {
+  height: 56px;
+  background-color: #101147;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  height: 64px;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  justify-content: space-between;
+  padding: 0 24px;
+  color: #ffffff;
+  border-top: 3px solid #fde488;
 
   .header-left {
-    flex: 1;
     display: flex;
     align-items: center;
-
-    .header-search {
-      width: 300px;
-      
-      .ant-input-group-addon {
-        background: transparent;
-        border: none;
+    gap: 16px;
+    .sidebar-toggle {
+      color: #d9d9f0;
+      font-size: 20px;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
       }
-      
-      .ant-input {
-        border-radius: 4px;
-        background: #f5f7fa;
-        border: none;
-        
-        &:focus {
-          box-shadow: none;
-        }
+    }
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .logo-icon {
+        background-color: #6c4eea;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+      .logo-text {
+        font-size: 18px;
+        font-weight: 600;
       }
     }
   }
@@ -44,57 +45,135 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
-    .header-notification {
-      cursor: pointer;
-      
-      .notification-icon {
+    .header-action-item {
+      color: #d9d9f0;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      .anticon {
         font-size: 18px;
-        color: #666;
-        transition: color 0.3s;
-        
-        &:hover {
-          color: $primary-color;
-        }
+      }
+      &:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.1);
       }
     }
-
-    .header-profile {
+    .profile-dropdown {
       display: flex;
       align-items: center;
       gap: 8px;
       cursor: pointer;
-      padding: 6px 8px;
-      border-radius: 4px;
-      transition: background 0.3s;
-      
-      &:hover {
-        background: rgba(0, 0, 0, 0.025);
-      }
-
       .profile-avatar {
-        background: $primary-color;
+        width: 32px;
+        height: 32px;
+        background-color: #a9a9d4;
+        border: 1px solid #d9d9f0;
       }
-
-      .profile-name {
-        font-weight: 500;
+      .profile-arrow {
+        color: #d9d9f0;
       }
     }
   }
 }
 
-// Responsive adjustments
-@media (max-width: 768px) {
-  .app-header {
-    .header-left {
-      .header-search {
-        width: 200px;
+
+/* === NEW STYLES FOR THE CUSTOM PROFILE DROPDOWN === */
+
+// This targets the Ant Design wrapper to remove default styling
+.profile-dropdown-container .ant-dropdown-menu {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+// The main card for the profile menu
+.profile-menu-card {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #e9eaf7;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+
+  .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .profile-menu-avatar {
+      background-color: #6c4eea;
+      // You can add a background image for a real avatar
+      // background-image: url('path/to/avatar.png'); 
+    }
+
+    .profile-text {
+      display: flex;
+      flex-direction: column;
+      .profile-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .profile-email {
+        font-size: 14px;
+        color: #7b7b93;
       }
     }
-    
-    .header-right {
-      .profile-name {
-        display: none;
+  }
+
+  .credit-usage {
+    padding: 16px;
+    h6 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #7b7b93;
+      margin-bottom: 16px;
+    }
+    .credit-item {
+      margin-bottom: 12px;
+      span {
+        font-size: 14px;
+        color: #555;
+      }
+      .ant-progress-inner {
+        background-color: #f0f2f5; // The trail color
+      }
+    }
+  }
+
+  .profile-actions {
+    padding: 8px;
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f7f5ff; // Light purple hover
+      }
+
+      .action-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0ebff;
+        color: #6c4eea;
+        border-radius: 6px;
+        font-size: 16px;
       }
     }
   }

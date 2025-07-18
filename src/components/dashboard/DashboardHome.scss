@@ -1,42 +1,244 @@
-@import "../../assets/scss/variables";
+
+/* Add these styles to the bottom of your existing DashboardHome.scss */
+
+.dashboard-actions {
+  .dropdown {
+    .custom-dropdown-toggle {
+      cursor: pointer;
+    }
+    
+    // Remove default dropdown menu styling
+    .custom-dropdown-menu {
+      padding: 0;
+      border: none;
+      background: none;
+      box-shadow: none;
+      margin-top: 8px !important; // Add some space from the toggle
+    }
+  }
+}
+
+/* ... rest of your DashboardHome.scss styles ... */
 
 
 
 .dashboard-home {
-  padding: 1.5rem;
+  background: #fafbff;
+  min-height: 100vh;
+  padding: 0 24px 24px 24px;
+  font-family: 'Inter', sans-serif;
 
-  .metric-card {
-    height: 100%;
-    border: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    .metric-title {
-      color: $secondary-color;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .metric-value {
-      font-weight: 600;
-      margin-bottom: 0;
-    }
-
-    .metric-change {
-      font-size: 0.8rem;
-      font-weight: 500;
-
-      &.positive {
-        color: $success-color;
+  .dashboard-topbar {
+    background: #fafbff;
+    padding-top: 24px;
+    .dashboard-tabs {
+      .nav-link {
+        color: #7b7b93;
+        font-weight: 500;
+        font-size: 16px;
+        &.active {
+          color: #6c4eea;
+          border-bottom: 2px solid #6c4eea;
+          background: transparent;
+        }
+        .tab-count {
+          color: #6c4eea;
+        }
       }
+    }
+    .dashboard-actions {
+      .filter-group {
+        .filter-select {
+          border-radius: 6px 0 0 6px;
+          border-right: 0;
+          min-width: 180px;
+          font-size: 15px;
+          margin-right: 10px;
+        }
+        .filter-btn {
+          border-radius: 0 6px 6px 0;
+          border-left: 0;
+          background: #f4f4fa;
+          color: #6c4eea;
+           margin-right: 10px;
+        }
+      }
+      .search-input {
+        min-width: 220px;
+        background: #f4f4fa;
+        border-radius: 6px;
+        border: none;
+        font-size: 15px;
+        
+        color: #b0b0c3;
+      }
+    }
+  
+  }
+    .create-btn {
+       
+      background: #6c4eea;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      color: #fff;
+      font-size: 16px;
+      padding: 8px 30px;
+    }
 
-      &.negative {
-        color: $danger-color;
+  /* === MODIFICATION START === */
+  .campaign-table-container {
+    background: #f4f4fa;
+    border-radius: 10px;
+    margin-top: 24px;
+    padding: 0;
+    overflow-x: auto; /* ADDED: This enables horizontal scrolling */
+
+    /* Custom scrollbar styling (optional but looks nice) */
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #e9eaf7;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #b0b0c3;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #7b7b93;
+    }
+
+    .campaign-table {
+      min-width: 1400px; /* ADDED: Sets a minimum width for the table to force overflow */
+
+      .campaign-table-header {
+        background: #e9eaf7;
+        border-radius: 10px 10px 0 0;
+        font-weight: 600;
+        color: #7b7b93;
+        font-size: 16px;
+        padding: 18px 24px;
+        display: flex;
+        .campaign-col {
+          &.campaign-details {
+            flex: 2.5;
+          }
+          &.report-col {
+            flex: 7.5;
+          }
+        }
+      }
+      .campaign-table-row {
+        background: #fff;
+        border-bottom: 1px solid #e9eaf7;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        .campaign-col {
+          &.campaign-details {
+            flex: 2.5;
+            display: flex;
+            align-items: center;
+            .campaign-avatar {
+              width: 44px;
+              height: 44px;
+              background: #f4f4fa;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 16px;
+              color: #b0b0c3;
+              font-size: 24px;
+            }
+            .campaign-info {
+              .campaign-title {
+                font-weight: 600;
+                color: #6c4eea;
+                font-size: 17px;
+                display: flex;
+                align-items: center;
+                white-space: nowrap; /* ADDED: Prevents title from wrapping */
+                .campaign-link {
+                  text-decoration: underline;
+                  cursor: pointer;
+                }
+                a {
+                  color: #6c4eea;
+                  margin-left: 4px;
+                }
+              }
+              .campaign-meta {
+                color: #b0b0c3;
+                font-size: 14px;
+                margin-top: 2px;
+                padding-right: 30px;
+             
+                white-space: nowrap; /* ADDED: Prevents metadata from wrapping */
+              }
+            }
+          }
+          &.report-col {
+            flex: 7.5;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            .report-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              min-width: 60px;
+              .report-value {
+                font-weight: 600;
+                font-size: 18px;
+               
+                color: #7b7b93;
+              }
+              .report-label {
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                white-space: nowrap; /* ADDED: Prevents labels like "Positive Reply" from wrapping */
+                &.sent { color: #6c4eea; }
+                &.opened { color: #a259e6; }
+                &.replied { color: #3ec9a7; }
+                &.positive { color: #4ecb71; }
+                &.bounced, &.sender-bounced { color: #e14b4b; }
+              }
+              .go-inbox-link {
+                color: #6c4eea;
+                font-size: 14px;
+                text-decoration: underline;
+                font-weight: 500;
+                margin-top: 8px;
+                white-space: nowrap; /* ADDED: Prevents this link from wrapping */
+                &:hover { color: #4e38b9; }
+              }
+            }
+          }
+          &.edit-col {
+            flex: 0 0 80px;
+            display: flex;
+            justify-content: center;
+            .edit-btn, .more-btn {
+              background: #f4f4fa;
+              border: none;
+              color: #b0b0c3;
+              border-radius: 6px;
+              padding: 6px 10px;
+              &:hover {
+                background: #e9eaf7;
+                color: #6c4eea;
+              }
+            }
+          }
+        }
       }
     }
   }
+  /* === MODIFICATION END === */
 }
+

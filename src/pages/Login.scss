@@ -1,0 +1,127 @@
+/* For best results, use the "Inter" font in your project. */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fe; // Light lavender/gray background
+  font-family: 'Inter', sans-serif;
+  
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    width: 100%;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #6c4eea;
+      font-size: 24px;
+      font-weight: 700;
+
+      span {
+        color: #333; // Dark text next to icon
+      }
+    }
+
+    .signup-link {
+      color: #555;
+      font-size: 15px;
+      a {
+        color: #6c4eea;
+        font-weight: 600;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .login-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .login-form {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: #7b7b93;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+
+      .form-item {
+        margin-bottom: 20px;
+        text-align: left;
+        
+        .password-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 4px;
+
+            a {
+                color: #6c4eea;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+                 &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+      }
+
+      // Theming Ant Design Inputs
+      .ant-input-lg, .ant-input-password-lg {
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        padding: 12px 16px;
+        height: 52px;
+
+        &:hover, &:focus, .ant-input:focus {
+          border-color: #6c4eea;
+          box-shadow: 0 0 0 2px rgba(108, 78, 234, 0.1);
+        }
+      }
+      
+      .ant-input-affix-wrapper:focus-within {
+        border-color: #6c4eea;
+        box-shadow: 0 0 0 2px rgba(108, 78, 234, 0.1);
+      }
+
+      // Theming Ant Design Button
+      .login-btn {
+        background-color: #6c4eea;
+        border-color: #6c4eea;
+        border-radius: 8px;
+        height: 52px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 12px;
+
+        &:hover {
+          background-color: #5a3fcf;
+          border-color: #5a3fcf;
+        }
+      }
+    }
+  }
+}

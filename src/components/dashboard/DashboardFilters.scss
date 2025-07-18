@@ -1,0 +1,95 @@
+/* For best results, use the "Inter" font in your project */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.column-customization-popover {
+  background-color: #fff;
+  border: 1px solid #e9eaf7;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 240px;
+  font-family: 'Inter', sans-serif;
+
+  .popover-title {
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #e9eaf7;
+  }
+
+  .filter-list {
+    padding: 8px 0;
+
+    .filter-item {
+      padding: 0 16px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f4f4fa;
+      }
+    }
+
+    // This is where we style the custom checkbox
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      
+      // Hide the default checkbox input
+      .form-check-input {
+        display: none;
+      }
+
+      // Style the label to look like a checkbox
+      .form-check-label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #333;
+        
+        // This is the box of the checkbox
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 18px;
+          height: 18px;
+          border: 1.5px solid #b0b0c3;
+          border-radius: 4px;
+          background-color: #fff;
+          transition: all 0.2s ease;
+        }
+
+        // This is the checkmark (as a background image)
+        &::after {
+          content: '';
+          position: absolute;
+          left: 4px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 10px;
+          height: 10px;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-size: contain;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+        }
+      }
+
+      // Styles for when the checkbox is checked
+      .form-check-input:checked + .form-check-label {
+        &::before {
+          background-color: #6c4eea;
+          border-color: #6c4eea;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

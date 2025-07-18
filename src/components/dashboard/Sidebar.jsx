@@ -1,7 +1,7 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { FiHome, FiMail, FiSettings, FiPieChart } from 'react-icons/fi'
-// import './Sidebar.scss'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FiHome, FiMail, FiSettings, FiPieChart } from 'react-icons/fi';
+import './Sidebar.scss';
 
 const Sidebar = () => {
   return (
@@ -12,33 +12,41 @@ const Sidebar = () => {
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
-              <FiHome className="icon" />
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <div className="icon-wrapper">
+                <FiHome />
+              </div>
               <span>Dashboard</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/campaigns" className={({ isActive }) => isActive ? 'active' : ''}>
-              <FiMail className="icon" />
+            <NavLink to="/campaigns" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <div className="icon-wrapper">
+                <FiMail />
+              </div>
               <span>Campaigns</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/inbox" className={({ isActive }) => isActive ? 'active' : ''}>
-              <FiPieChart className="icon" />
+            <NavLink to="/inbox" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <div className="icon-wrapper">
+                <FiPieChart />
+              </div>
               <span>Master Inbox</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/settings" className={({ isActive }) => isActive ? 'active' : ''}>
-              <FiSettings className="icon" />
+            <NavLink to="/settings" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <div className="icon-wrapper">
+                <FiSettings />
+              </div>
               <span>Settings</span>
             </NavLink>
           </li>
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

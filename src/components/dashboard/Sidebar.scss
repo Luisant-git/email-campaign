@@ -1,0 +1,98 @@
+/* For the best result, add this font to your project's main CSS/index.css file: */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  border-right: 1.5px solid #f4f4fa;
+
+  .sidebar-logo {
+    padding: 32px 0 24px 0;
+    text-align: center;
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #6c4eea;
+      margin: 0;
+    }
+  }
+
+  .sidebar-nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0 16px;
+        margin-bottom: 4px;
+
+        a {
+          display: flex;
+          align-items: center;
+          padding: 10px 12px;
+          color: #7b7b93;
+          font-size: 16px;
+          border-radius: 8px;
+          text-decoration: none;
+          position: relative;
+          transition: background 0.2s, color 0.2s;
+
+          .icon-wrapper {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4fa;
+            border-radius: 8px;
+            margin-right: 14px;
+            font-size: 18px;
+            color: #7b7b93;
+            transition: all 0.2s ease;
+          }
+
+          span {
+            font-weight: 500;
+          }
+
+          &.active {
+            color: #333; // Active text color is dark, not purple
+            font-weight: 600;
+
+            // This creates the purple vertical bar on the left
+            &::before {
+              content: '';
+              position: absolute;
+              left: -16px; // Positions the bar outside the li's padding
+              top: 0;
+              height: 100%;
+              width: 4px;
+              background: #6c4eea;
+              border-radius: 0 4px 4px 0;
+            }
+
+            .icon-wrapper {
+              background-color: #6c4eea;
+              color: #fff;
+            }
+          }
+
+          &:hover:not(.active) {
+            background: #f7f5ff; // Light purple background on hover
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
