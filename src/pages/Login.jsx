@@ -18,16 +18,16 @@ const Login = () => {
       <header className="login-header">
         <div className="logo">
           <BsMegaphoneFill size={24} />
-          <span>Syfer250</span>
+          <span>Luisant</span>
         </div>
         <div className="signup-link">
-          New to Syfer250? <a href="/signup">Sign up</a>
+          New to Luisant? <a href="/signup">Sign up</a>
         </div>
       </header>
 
       <main className="login-container">
         <div className="login-form">
-          <h2>Sign in to Syfer250</h2>
+          <h2>Sign in to Luisant</h2>
           <p>
             Always land in your lead’s inbox with unlimited sender accounts, so you can focus on closing deals.
           </p>
