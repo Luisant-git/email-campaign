@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <h3 style={{ color: '#7e8cfb', cursor: 'pointer' }} onClick={handleLogoClick}>Syfer250</h3>
+        <h3 style={{ color: '#7e8cfb', cursor: 'pointer' }} onClick={handleLogoClick}>LUISANT</h3>
       </div>
       <nav className="sidebar-nav">
         <ul>
