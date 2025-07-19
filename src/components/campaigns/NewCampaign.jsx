@@ -26,11 +26,10 @@ const Stepper = ({ steps, current }) => (
 );
 
 
-const NewCampaign = () => {
-     const navigate = useNavigate();
-       const handleNext = () => {
-    navigate('/field-mapper'); // Navigate to FieldMapper route
-  };
+const NewCampaign = ({ onNext }) => {
+  const navigate = useNavigate();
+  const next = () => setCurrent(current + 1);
+  const prev = () => setCurrent(current - 1);
   const [current, setCurrent] = useState(0);
   const [importSettings, setImportSettings] = useState({
     globalBlockList: false,
@@ -39,7 +38,6 @@ const NewCampaign = () => {
     existingCampaign: false
   });
 
-  // Your original steps definition - NO CHANGES HERE
   const steps = [
     {
       title: 'Import Leads',
@@ -47,25 +45,22 @@ const NewCampaign = () => {
     },
     {
       title: 'Field Mapping',
-      content: <FieldMapper /> // Assuming you have this component
+      content: <FieldMapper />
     },
     {
       title: 'Email Sequences',
-      content: <EmailSequences /> // Assuming you have this component
+      content: <EmailSequences /> 
     },
     {
       title: 'Schedule',
-      content: <ScheduleSettings /> // Assuming you have this component
+      content: <ScheduleSettings /> 
     },
     {
       title: 'Settings',
-      content: <CampaignSettings /> // Assuming you have this component
+      content: <CampaignSettings /> 
     }
   ];
 
-  // Your original navigation functions - NO CHANGES HERE
-  const next = () => setCurrent(current + 1);
-  const prev = () => setCurrent(current - 1);
   
 
   return (
@@ -108,9 +103,9 @@ const NewCampaign = () => {
         <div className="footer-right">
           {/* Your 'Next' button */}
           {current < steps.length - 1 && (
-             <AntButton type="primary" onClick={handleNext}>
-      Next
-    </AntButton>
+             <AntButton type="primary" onClick={next}>
+              Next
+            </AntButton>
           )}
           {/* Your 'Create Campaign' button */}
           {current === steps.length - 1 && (

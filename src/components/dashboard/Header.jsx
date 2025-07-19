@@ -66,7 +66,7 @@ const Header = ({ onToggleSidebar }) => {
           <div className="logo-icon">
             <BsMegaphoneFill />
           </div>
-          <span className="logo-text">Syfer250</span>
+          <span className="logo-text">Luisant</span>
         </div>
       </div>
       <div className="header-right">

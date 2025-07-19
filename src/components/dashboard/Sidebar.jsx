@@ -1,13 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FiHome, FiMail, FiSettings, FiPieChart } from 'react-icons/fi';
 import './Sidebar.scss';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate('/');
+  };
   return (
     <div className="sidebar">
       <div className="sidebar-logo">
-        <h3>Syfer250</h3>
+        <h3 style={{ color: '#7e8cfb', cursor: 'pointer' }} onClick={handleLogoClick}>LUISANT</h3>
       </div>
       <nav className="sidebar-nav">
         <ul>

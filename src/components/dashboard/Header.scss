@@ -1,13 +1,13 @@
 /* Main header container - NO CHANGES */
 .app-header {
-  height: 56px;
+  height: 70px;
   background-color: #101147;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
   color: #ffffff;
-  border-top: 3px solid #fde488;
+  // border-top: 3px solid #fde488;
 
   .header-left {
     display: flex;

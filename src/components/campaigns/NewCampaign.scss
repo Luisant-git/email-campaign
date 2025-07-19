@@ -4,7 +4,7 @@
 .new-campaign-page {
   display: flex;
   flex-direction: column;
-  height: 100vh; // Use height to make the footer sticky
+  height: 100%; // Changed from 100vh to 100%
   background-color: #f8f9fe;
   font-family: 'Inter', sans-serif;
 }
@@ -68,7 +68,7 @@
 
 .new-campaign-content {
   flex: 1; // This makes the content area take up all available space
-  overflow-y: auto; // Add scroll if content is too long
+  overflow-y: visible; // Changed from auto to visible to prevent scrolling
   // The content inside (like your CSVUpload component) will provide its own padding and layout
 }
 

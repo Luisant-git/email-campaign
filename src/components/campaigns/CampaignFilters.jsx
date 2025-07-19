@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Button, Select, DatePicker, Space } from 'antd'
 import { FilterOutlined, CloseOutlined } from '@ant-design/icons'
 import './CampaignFilters.scss'
@@ -25,7 +25,7 @@ const CampaignFilters = ({
       appliedFilters.status = filters.status
     }
     
-    if (filters.dateRange) {
+    if (filters.dateRange && filters.dateRange[0] && filters.dateRange[1]) {
       appliedFilters.startDate = filters.dateRange[0].format('YYYY-MM-DD')
       appliedFilters.endDate = filters.dateRange[1].format('YYYY-MM-DD')
     }

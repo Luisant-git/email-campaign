@@ -275,7 +275,10 @@ const CampaignList = () => {
 
       {showFilters && (
         <CampaignFilters
-          onFilter={setFilters}
+          onFilter={(newFilters) => {
+            setFilters({...filters, ...newFilters});
+            setPagination({...pagination, current: 1});
+          }}
           onReset={handleResetFilters}
           statusOptions={statusOptions}
           currentStatus={filters.status}
