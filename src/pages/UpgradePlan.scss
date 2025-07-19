@@ -1,0 +1,129 @@
+/* For best results, use the "Inter" font in your project. */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.upgrade-plan-page {
+  background-color: #f8f9fe;
+  padding: 48px;
+  font-family: 'Inter', sans-serif;
+
+  /* === TOP SECTION STYLES === */
+  .page-header {
+    text-align: center;
+    margin-bottom: 32px;
+    h2 { font-size: 32px; font-weight: 700; color: #1a1a1a; }
+    p { color: #7b7b93; font-size: 16px; }
+  }
+
+  .billing-toggle-section {
+    display: flex; justify-content: center; align-items: center; margin-bottom: 48px;
+    .toggle-buttons {
+      display: flex; background-color: #fff; border: 1px solid #e0e0e0;
+      border-radius: 8px; padding: 4px;
+      .btn {
+        background: none; border: none; color: #555; font-weight: 500;
+        padding: 8px 16px; transition: all 0.2s ease;
+        &.active { background-color: #f0ebff; color: #6c4eea; border-radius: 6px; }
+        &:focus { box-shadow: none; }
+      }
+    }
+    .save-graphic { display: flex; align-items: center; margin-left: 16px; color: #4ecb71; font-weight: 600; }
+  }
+
+  .pricing-cards-container {
+    display: flex; justify-content: center; align-items: flex-start; gap: 24px;
+  }
+
+  .plan-card {
+    background-color: #fff; border: 1px solid #e9eaf7; border-radius: 16px;
+    padding: 32px; flex: 1; max-width: 350px; text-align: center; position: relative;
+    &.preferred { background-color: #fff0f3; border-color: #ffb3c1; transform: translateY(-10px); }
+    .preferred-banner {
+      position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+      background-color: #ffb3c1; color: #c72c41; font-weight: 600; font-size: 12px;
+      padding: 6px 12px; border-radius: 16px; white-space: nowrap;
+    }
+    .plan-header {
+      min-height: 80px;
+      .plan-name { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+      .plan-price { font-size: 36px; font-weight: 700; margin-bottom: 24px; }
+      .expert-plan-dropdown { text-align: left; margin-top: 24px; margin-bottom: 16px;
+        label { font-size: 14px; color: #7b7b93; margin-bottom: 4px; }
+      }
+    }
+    .choose-plan-btn {
+      width: 100%; padding: 12px; font-weight: 600; border-radius: 8px; margin-bottom: 32px;
+      background-color: #fff; border: 1.5px solid #6c4eea; color: #6c4eea; transition: all 0.2s;
+      &:hover { background-color: #f0ebff; }
+    }
+    &.preferred .choose-plan-btn { background: linear-gradient(90deg, #8e76f1, #6c4eea); border: none; color: #fff;
+      &:hover { opacity: 0.9; }
+    }
+    .plan-features {
+      list-style: none; padding: 0; margin: 0; text-align: left;
+      li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #555;
+        .feature-icon { color: #6c4eea; font-size: 18px; flex-shrink: 0; }
+      }
+    }
+    .full-details-link { display: inline-block; margin-top: 16px; color: #6c4eea; font-weight: 600; text-decoration: underline; }
+  }
+
+  @media (max-width: 992px) {
+    .pricing-cards-container { flex-direction: column; align-items: center; }
+    .plan-card.preferred { transform: none; }
+  }
+
+  /* === DIVIDER AND BOTTOM SECTION STYLES === */
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e9eaf7;
+    margin: 64px auto;
+    width: 100%;
+  }
+
+  .general-plan-section {
+    .current-plan-header {
+      display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;
+      .plan-details {
+        display: flex; gap: 48px;
+        label { display: block; color: #7b7b93; font-size: 14px; margin-bottom: 4px; }
+        h3 { color: #6c4eea; font-size: 24px; font-weight: 700; margin: 0; }
+        span { font-weight: 500; color: #333; }
+      }
+      .manage-billing-btn {
+        background-color: #f0ebff; color: #6c4eea; border: none;
+        font-weight: 600; border-radius: 6px;
+        &:hover { background-color: #e5dbff; }
+      }
+    }
+
+    .usage-card {
+      background-color: #fff; border: 1px solid #e9eaf7; border-radius: 12px; padding: 24px;
+      .usage-status h5, .plan-benefits h5 { font-weight: 700; font-size: 16px; margin-bottom: 24px; }
+      .usage-grid {
+        display: flex;
+        .usage-item {
+          flex: 1; padding-right: 24px;
+          &:not(:last-child) { border-right: 1px solid #e9eaf7; margin-right: 24px; }
+          h6 { font-weight: 600; margin-bottom: 8px; }
+          .ant-progress-inner { background-color: #f0f2f5; }
+          p { margin-top: 8px; color: #7b7b93; }
+        }
+      }
+      .card-divider { border: none; border-top: 1px solid #e9eaf7; margin: 24px 0; }
+      .benefits-list {
+        list-style: none; padding: 0; margin: 0; display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+        li { display: flex; align-items: center; gap: 8px; font-weight: 500;
+          .benefit-icon { color: #6c4eea; font-size: 18px; }
+        }
+      }
+    }
+
+    .bottom-bar {
+      margin-top: 24px; background-color: #e0e0e0; height: 12px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4px; color: #a0a0a0;
+      .bar-indicator { height: 100%; width: 20%; background-color: #c0c0c0; border-radius: 6px; }
+    }
+  }
+}
