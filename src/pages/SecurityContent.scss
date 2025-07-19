@@ -1,0 +1,115 @@
+/* For best results, use the "Inter" font in your project. */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+// Base card styling (can be shared or defined here)
+.settings-card.security-content {
+  background: #fff;
+  border: 1px solid #e9eaf7;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  max-width: 800px; // A good max-width for forms
+}
+
+// Styling for each distinct section within the card
+.security-section {
+  h3 {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+  h5 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+  p {
+    margin-bottom: 24px;
+    color: #7b7b93;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  // Spacing for the Ant Design checkbox
+  .ant-checkbox-wrapper {
+    margin-bottom: 16px;
+  }
+
+  // Custom styling for the purple 'Update' button
+  .update-btn {
+    background-color: #6c4eea;
+    border-color: #6c4eea;
+    font-weight: 600;
+    border-radius: 6px;
+    &:hover {
+      background-color: #5a3fcf;
+      border-color: #5a3fcf;
+    }
+  }
+  
+  // Custom styling for the red 'Force Logout' button
+  .logout-btn {
+    font-weight: 600;
+    border-radius: 6px;
+  }
+}
+
+// The divider line between sections
+.section-divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 24px 0;
+}
+
+// Floating Label Input Styles
+.floating-label-input {
+  position: relative;
+  margin-bottom: 16px;
+
+  // Style the Ant Design input component
+  .ant-input-password {
+    height: 52px;
+    border-radius: 6px;
+    border: 1px solid #d9d9d9;
+    
+    // Adjust the inner input to align text correctly
+    .ant-input {
+      height: 42px;
+      font-size: 16px;
+      &::placeholder {
+          color: transparent; // Hide the placeholder text by default
+      }
+    }
+  }
+  
+  // Add the purple border and shadow on focus, matching the image
+  .ant-input-affix-wrapper-focused {
+    border-color: #6c4eea !important;
+    box-shadow: 0 0 0 2px rgba(108, 78, 234, 0.1) !important;
+  }
+
+  // The floating label itself
+  label {
+    position: absolute;
+    left: 12px;
+    top: 15px; // Vertically centered initially
+    font-size: 16px;
+    color: #7b7b93;
+    pointer-events: none; // Allows clicks to pass through to the input
+    transition: all 0.2s ease-out;
+    background: #fff; // Ensures the label covers the input border when it floats up
+    padding: 0 4px;
+  }
+
+  // This is the floating animation logic
+  // When the input is focused OR has content, move the label up
+  .ant-input:focus + label,
+  .ant-input:not(:placeholder-shown) + label {
+    top: -10px; // Move above the input
+    font-size: 12px;
+    color: #6c4eea; // Change color to purple
+  }
+}

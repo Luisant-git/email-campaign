@@ -4,6 +4,7 @@ import router from './routes'
 
 function App() {
   return (
+    
     // <AuthProvider> // Uncomment when AuthProvider is ready
     <RouterProvider router={router} />
     
