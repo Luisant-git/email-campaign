@@ -7,6 +7,7 @@ import SettingsProfile from './pages/SettingsProfile';
 import FieldMapper from './components/campaigns/FieldMapper';
 // import Settings from './pages/Settings'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 import NotFoundPage from './components/NotFoundPage';
 // import MainLayout from './components/common/MainLayout'
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/signup',
+    element: <Signup />
   },
   {
     path: '/not-found',

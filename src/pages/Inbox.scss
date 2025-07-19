@@ -3,13 +3,15 @@
 
 .master-inbox-page {
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: #f8f9fe;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow: hidden;
   position: relative;
 }
+
+// Removed duplicate sidebar definition
 
 // 1. Left Sidebar
 .inbox-sidebar {
@@ -18,7 +20,7 @@
   background-color: #fff;
   border-right: 1px solid #e9eaf7;
   padding: 16px;
-  
+
   .sidebar-section {
     margin-bottom: 24px;
   }
@@ -56,18 +58,24 @@
       font-weight: 500;
       text-decoration: none;
       transition: background-color 0.2s;
-      
-      svg { font-size: 18px; color: #7b7b93; }
 
-      &.active, &:hover {
+      svg {
+        font-size: 18px;
+        color: #7b7b93;
+      }
+
+      &.active,
+      &:hover {
         background-color: #f4f4fa;
         color: #333;
         font-weight: 600;
-        svg { color: #333; }
+        svg {
+          color: #333;
+        }
       }
     }
   }
-  
+
   .sidebar-description {
     color: #7b7b93;
     font-size: 14px;
@@ -89,26 +97,50 @@
     border-bottom: 1px solid #e9eaf7;
     .search-bar {
       position: relative;
-      .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #7b7b93; }
-      .filter-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #7b7b93; font-size: 20px;}
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7b7b93;
+      }
+      .filter-icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7b7b93;
+        font-size: 20px;
+      }
       .form-control {
         border: 1px solid #e9eaf7;
         background-color: #f8f9fe;
         border-radius: 6px;
         padding-left: 36px;
-        &:focus { box-shadow: 0 0 0 2px rgba(108, 78, 234, 0.2); border-color: #6c4eea; }
+        &:focus {
+          box-shadow: 0 0 0 2px rgba(108, 78, 234, 0.2);
+          border-color: #6c4eea;
+        }
       }
     }
   }
-  
+
   .list-view-content {
     padding: 16px;
     .list-view-subheader {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      h2 { font-size: 20px; font-weight: 600; margin: 0; }
-      .refresh-btn { color: #7b7b93; font-size: 18px; padding: 4px; }
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .refresh-btn {
+        color: #7b7b93;
+        font-size: 18px;
+        padding: 4px;
+      }
     }
     .list-view-empty {
       padding-top: 16px;
@@ -141,9 +173,16 @@
     box-shadow: 0 8px 24px rgba(108, 78, 234, 0.05);
 
     .graphic-header {
-      span { color: #b0b0c3; font-size: 12px; }
+      span {
+        color: #b0b0c3;
+        font-size: 12px;
+      }
       .graphic-line {
-        height: 10px; width: 40%; background-color: #f4f4fa; border-radius: 4px; margin-top: 4px;
+        height: 10px;
+        width: 40%;
+        background-color: #f4f4fa;
+        border-radius: 4px;
+        margin-top: 4px;
       }
     }
     .graphic-body {
@@ -151,18 +190,41 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      .graphic-line { height: 8px; background-color: #f4f4fa; border-radius: 4px; }
-      .highlight { background-color: #d1f3e0; width: 30%; }
-      .short { width: 60%; }
+      .graphic-line {
+        height: 8px;
+        background-color: #f4f4fa;
+        border-radius: 4px;
+      }
+      .highlight {
+        background-color: #d1f3e0;
+        width: 30%;
+      }
+      .short {
+        width: 60%;
+      }
     }
-    .graphic-chart-line { position: absolute; top: 20px; right: 20px; }
-    .graphic-envelope { position: absolute; bottom: -15px; left: 20px; }
+    .graphic-chart-line {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .graphic-envelope {
+      position: absolute;
+      bottom: -15px;
+      left: 20px;
+    }
   }
 
   .empty-state-text {
     margin-top: 40px;
-    h3 { font-weight: 600; font-size: 20px; color: #333; }
-    p { color: #7b7b93; }
+    h3 {
+      font-weight: 600;
+      font-size: 20px;
+      color: #333;
+    }
+    p {
+      color: #7b7b93;
+    }
   }
 }
 

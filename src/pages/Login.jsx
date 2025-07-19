@@ -1,16 +1,14 @@
-import React from 'react';
-import { Input, Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
-import { BsMegaphoneFill } from 'react-icons/bs'; 
-import './Login.scss';
+import React from "react";
+import { Input, Button } from "antd";
+import { useNavigate } from "react-router-dom";
+import { BsMegaphoneFill } from "react-icons/bs";
+import "./Login.scss";
 
 const Login = () => {
   const navigate = useNavigate();
 
-
   const handleLogin = () => {
-  
-    navigate('/'); 
+    navigate("/");
   };
 
   return (
@@ -18,18 +16,19 @@ const Login = () => {
       <header className="login-header">
         <div className="logo">
           <BsMegaphoneFill size={24} />
-          <span>Luisant</span>
+          <span>Syfer250</span>
         </div>
         <div className="signup-link">
-          New to Luisant? <a href="/signup">Sign up</a>
+          New to Syfer250? <a href="/signup">Sign up</a>
         </div>
       </header>
 
       <main className="login-container">
         <div className="login-form">
-          <h2>Sign in to Luisant</h2>
+          <h2>Sign in to Syfer250</h2>
           <p>
-            Always land in your lead’s inbox with unlimited sender accounts, so you can focus on closing deals.
+            Always land in your lead’s inbox with unlimited sender accounts, so
+            you can focus on closing deals.
           </p>
 
           <div className="form-item">
@@ -40,7 +39,7 @@ const Login = () => {
             <div className="password-header">
               <a href="/forgot-password">Forgot Password?</a>
             </div>
-            <Input.Password size="large" placeholder="Enter Password" />
+            <Input size="large" placeholder="Enter Password" />
           </div>
 
           <Button

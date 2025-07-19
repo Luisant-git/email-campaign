@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // <-- IMPORT LINK
-import { Avatar, Dropdown, Button, Progress } from 'antd';
+import React from "react";
+import { Link } from "react-router-dom"; // <-- IMPORT LINK
+import { Avatar, Dropdown, Button, Progress } from "antd";
 import {
   MenuFoldOutlined,
   GiftOutlined,
@@ -8,9 +8,9 @@ import {
   SettingOutlined,
   LogoutOutlined,
   DownOutlined,
-} from '@ant-design/icons';
-import { BsMegaphoneFill } from 'react-icons/bs';
-import './Header.scss';
+} from "@ant-design/icons";
+import { BsMegaphoneFill } from "react-icons/bs";
+import "./Header.scss";
 
 // Custom component for the profile dropdown menu
 const ProfileMenu = () => (
@@ -34,16 +34,15 @@ const ProfileMenu = () => (
       </div>
     </div>
     <div className="profile-actions">
-
       <Link to="/settings" className="action-item">
         <div className="action-icon">
           <SettingOutlined />
         </div>
         <span>Settings</span>
       </Link>
-    <Link to="/login" className="action-item">
+      <Link to="/login" className="action-item">
         <div className="action-icon">
-          < LogoutOutlined />
+          <LogoutOutlined />
         </div>
         <span>Logout</span>
       </Link>
@@ -66,19 +65,27 @@ const Header = ({ onToggleSidebar }) => {
           <div className="logo-icon">
             <BsMegaphoneFill />
           </div>
-          <span className="logo-text">Luisant</span>
+          <span className="logo-text">Syfer250</span>
         </div>
       </div>
       <div className="header-right">
-        <Button type="text" icon={<GiftOutlined />} className="header-action-item" />
-        <Button type="text" icon={<QuestionCircleOutlined />} className="header-action-item">
+        <Button
+          type="text"
+          icon={<GiftOutlined />}
+          className="header-action-item"
+        />
+        <Button
+          type="text"
+          icon={<QuestionCircleOutlined />}
+          className="header-action-item"
+        >
           Help
         </Button>
-        <Dropdown 
-          overlay={<ProfileMenu />} 
-          placement="bottomRight" 
-          arrow 
-          trigger={['click']}
+        <Dropdown
+          overlay={<ProfileMenu />}
+          placement="bottomRight"
+          arrow
+          trigger={["click"]}
           overlayClassName="profile-dropdown-container"
         >
           <div className="profile-dropdown">

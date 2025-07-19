@@ -68,7 +68,7 @@ const NewCampaign = ({ onNext }) => {
       {/* HEADER from the target design */}
       <header className="new-campaign-header">
         <div className="header-left">
-          <Button variant="link" className="back-btn">
+          <Button variant="link" className="back-btn" accordion onClick={() => navigate(-1)}>
             <BsArrowLeft />
           </Button>
           <div className="campaign-name-input">
