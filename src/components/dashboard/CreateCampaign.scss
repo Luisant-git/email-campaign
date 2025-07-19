@@ -88,6 +88,19 @@
           border-color: #6c4eea;
         }
       }
+      
+      &.completed {
+        color: #4ECB71;
+        .step-circle {
+          border-color: #4ECB71;
+          background-color: #4ECB71;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,222 @@
+.email-connection-modal {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e3a59;
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .header-section {
+    h5 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #7a7a9d;
+      margin-bottom: 20px;
+    }
+
+    .steps-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 14px;
+      color: #7a7a9d;
+      font-weight: 500;
+
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .circle {
+          background-color: #6c4eea;
+          color: white;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        &.active {
+          color: #6c4eea;
+          font-weight: 600;
+        }
+
+        .arrow-icon {
+          color: #6c4eea;
+          margin-left: 6px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .configuration-card {
+    background: #f3f1ff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+
+    .config-option {
+      display: flex;
+      cursor: pointer;
+      input[type="radio"] {
+        margin-right: 15px;
+        margin-top: 6px;
+        accent-color: #6c4eea;
+        width: 18px;
+        height: 18px;
+      }
+
+      .config-content {
+        flex: 1;
+
+        .config-header {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 700;
+          font-size: 16px;
+          margin-bottom: 4px;
+
+          .config-icon {
+            background-color: #6c4eea;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+          }
+        }
+
+        .subtitle {
+          font-size: 13px;
+          color: #7a7a9d;
+          margin-bottom: 15px;
+        }
+
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px 20px;
+          margin-bottom: 20px;
+
+          .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #2e3a59;
+          }
+        }
+
+        .provider-selection {
+          .provider-label {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 14px;
+          }
+
+          .provider-grid {
+            display: flex;
+            gap: 20px;
+
+            .provider-card {
+              background: white;
+              border: 1px solid #e0e0e0;
+              border-radius: 8px;
+              padding: 15px 20px;
+              width: 120px;
+              text-align: center;
+              cursor: pointer;
+              transition: all 0.2s ease;
+
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 10px;
+
+              span {
+                font-size: 14px;
+                font-weight: 600;
+                color: #2e3a59;
+              }
+
+              &:hover {
+                border-color: #6c4eea;
+                box-shadow: 0 0 8px rgba(108, 78, 234, 0.3);
+              }
+
+              &.selected {
+                border-color: #6c4eea;
+                box-shadow: 0 0 10px rgba(108, 78, 234, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bulk-upload-section {
+    h6 {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #2e3a59;
+    }
+
+    .bulk-upload-box {
+      background: #f3f1ff;
+      border-radius: 12px;
+      padding: 20px 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+
+      .upload-icon {
+        background-color: #6c4eea;
+        color: white;
+        border-radius: 50%;
+        padding: 6px;
+      }
+
+      .upload-text {
+        p {
+          margin: 0;
+          font-size: 14px;
+          color: #2e3a59;
+
+          &.small-text {
+            font-size: 13px;
+            color: #7a7a9d;
+          }
+        }
+
+        .choose-file {
+          color: #6c4eea;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    button {
+      min-width: 100px;
+      font-weight: 600;
+    }
+  }
+}

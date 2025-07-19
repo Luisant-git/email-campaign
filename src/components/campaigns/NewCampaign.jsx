@@ -17,8 +17,8 @@ import { useNavigate } from 'react-router-dom';
 const Stepper = ({ steps, current }) => (
   <div className="stepper">
     {steps.map((item, index) => (
-      <div key={item.title} className={`stepper-item ${current === index ? 'active' : ''}`}>
-        <div className="step-circle"></div>
+      <div key={item.title} className={`stepper-item ${current === index ? 'active' : ''} ${index < current ? 'completed' : ''}`}>
+        <div className="step-circle">{index < current ? '✓' : ''}</div>
         <span>{item.title}</span>
       </div>
     ))}

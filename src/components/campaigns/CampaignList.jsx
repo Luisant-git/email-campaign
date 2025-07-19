@@ -101,7 +101,7 @@ const CampaignList = () => {
             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
               <InputGroup className="me-2 filter-group">
                 <Form.Select className="filter-select">
-                  <option value="" disabled hidden>
+                  <option value="" hidden>
                     Email Sent, Opened...
                   </option>
                 </Form.Select>

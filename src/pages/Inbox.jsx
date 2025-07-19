@@ -17,6 +17,7 @@ import {
 import { BiFilterAlt } from "react-icons/bi";
 import { RiCalendarTodoLine } from "react-icons/ri";
 import "./Inbox.scss";
+import EmailConnectionModal from "./EmailConnectionModal ";
 
 // Data for the sidebar navigation items
 const navItems = [
@@ -28,6 +29,7 @@ const navItems = [
   { icon: <FiBell />, text: "Reminders", page: "Reminders" },
   { icon: <RiCalendarTodoLine />, text: "Scheduled", page: "Scheduled" },
   { icon: <FiArchive />, text: "Archived", page: "Archived" },
+  { icon: <BsPlus />, text: "Connect", page: "Connect" },
 ];
 
 const emptyMessages = {
@@ -66,10 +68,16 @@ const emptyMessages = {
     title: "Archived",
     message: "No archived messages. Archive messages to keep your inbox clean.",
   },
+  Connnect: {
+    title: "Connect",
+    message:
+      "No connected email found. Connect email to manage your relationships.",
+  },
 };
 
 const MasterInbox = () => {
   const [selectedPage, setSelectedPage] = useState("Inbox");
+  const [showConnectionModal, setShowConnectionModal] = useState(false);
 
   return (
     <div className="campaigns-page">
@@ -236,12 +244,19 @@ const MasterInbox = () => {
             </main>
 
             {/* Floating Action Button */}
-            <button className="inbox-fab">
+            <button
+              className="inbox-fab"
+              onClick={() => setShowConnectionModal(true)}
+            >
               <BsMegaphoneFill />
             </button>
           </div>
         </div>
       </div>
+      <EmailConnectionModal
+        show={showConnectionModal}
+        onHide={() => setShowConnectionModal(false)}
+      />
     </div>
   );
 };
