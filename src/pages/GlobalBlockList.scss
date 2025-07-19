@@ -1,0 +1,106 @@
+/* For best results, use the "Inter" font in your project. */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// The main container for the Global Block List content
+.global-block-list-content {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+
+  // The top bar containing the title and action buttons
+  .block-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 16px 24px;
+    border: 1px solid #e9eaf7;
+    border-radius: 12px; // Rounded corners for the card
+    margin-bottom: 24px;
+
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+      margin: 0;
+      color: #1a1a1a;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+
+      // Styling for the Ant Design Dropdown Button
+      .ant-dropdown-button {
+        border-radius: 6px; // Overall radius for the group
+        
+        // Left part of the button
+        .ant-btn:first-child {
+          background-color: #6c4eea;
+          border-color: #6c4eea;
+          border-radius: 6px 0 0 6px;
+          font-weight: 500;
+          &:hover {
+            background-color: #5a3fcf;
+            border-color: #5a3fcf;
+          }
+        }
+
+        // Right part of the button (the dropdown trigger)
+        .ant-btn:last-child {
+          background-color: #6c4eea;
+          border-color: #6c4eea;
+          color: #fff;
+          border-radius: 0 6px 6px 0;
+          border-left-color: rgba(255, 255, 255, 0.3); // The subtle divider line
+           &:hover {
+            background-color: #5a3fcf;
+            border-color: #5a3fcf;
+            border-left-color: rgba(255, 255, 255, 0.3);
+          }
+        }
+      }
+      
+      // The "..." more button
+      .more-btn {
+        background-color: #f4f4fa;
+        border: 1px solid #e9eaf7;
+        color: #7b7b93;
+        border-radius: 6px;
+         &:hover {
+            background-color: #e9eaf7;
+         }
+      }
+    }
+  }
+
+  // The custom table container
+  .block-list-table {
+    background: #fff;
+    border: 1px solid #e9eaf7;
+    border-radius: 12px;
+    overflow: hidden; // Ensures the background respects the border radius
+
+    // The header row of the custom table
+    .table-header-row {
+      display: flex;
+      background: #f4f4fa;
+      padding: 16px 24px;
+      border-bottom: 1px solid #e9eaf7;
+      
+      span {
+        flex: 1; // Distribute space evenly
+        color: #7b7b93;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+
+    // The body area of the custom table
+    .table-body {
+      .empty-row {
+        padding: 24px;
+        color: #7b7b93;
+        font-size: 14px;
+      }
+    }
+  }
+}
